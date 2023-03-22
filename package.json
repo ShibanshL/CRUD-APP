@@ -1,0 +1,36 @@
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "server": "json-server --watch API.json --port 3031",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "test": "react-scripts test",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/user-event": "^14.4.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1",
+    "ts-node": "^10.9.1",
+    "zustand": "^4.3.6"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@testing-library/react": "^14.0.0",
+    "@types/jest": "^29.5.0",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^3.1.0",
+    "jest": "^29.5.0",
+    "msw": "^1.1.1",
+    "ts-jest": "^29.0.5",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0"
+  }
+}
