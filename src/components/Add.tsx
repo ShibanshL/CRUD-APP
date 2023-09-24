@@ -7,12 +7,9 @@ function Add() {
   const [val, setVal] = useState("");
   const [tasks, setTasks] = useState({ id: "", Task: "", Done: false });
   const setNotify = useNotification((state: any) => state.setNotification);
-  const change = useStore((state: any) => state.count);
-  const setChange = useStore((state: any) => state.inc);
 
   useEffect(() => {
     AddData(tasks);
-    // setChange()
     setVal("");
   }, [tasks]);
 
@@ -23,7 +20,6 @@ function Add() {
       Task: val,
     });
     AddData(tasks);
-    // setChange()
     setNotify("ADD");
   };
 

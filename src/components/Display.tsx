@@ -12,8 +12,11 @@ import {
   FetchData,
   ChangeStatus,
 } from "../fetchers/AllFetchers";
-import DeleteIcon from "../assets/DeleteIcon";
-import TestSvg from "../assets/Dustbin.svg";
+
+import Edit from "/Vector-1.svg";
+import Delete from "/Vector.svg";
+import Cross from "/Vector-2.svg";
+import Correct from "/Vector-3.svg";
 
 interface APIDATA {
   id: string;
@@ -180,7 +183,15 @@ function Display() {
                         <>
                           <button
                             data-testid="EditButton"
-                            style={{ background: "white" }}
+                            style={{
+                              height: "40px",
+                              width: "40px",
+                              background: "white",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              padding: 0,
+                            }}
                             disabled={e.Done ? true : false}
                             onClick={() => {
                               setEdit({ currentVal: e.Task, ifClicked: true });
@@ -191,11 +202,19 @@ function Display() {
                               });
                             }}
                           >
-                            E
+                            <img src={Edit} style={{ width: "10px" }} />
                           </button>
                           <button
                             data-testid="DeleteButton"
-                            style={{ background: "white" }}
+                            style={{
+                              height: "40px",
+                              width: "40px",
+                              background: "white",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              padding: 0,
+                            }}
                             onClick={() => {
                               DeleteData(e.id);
                               setNotify("DELETE");
@@ -203,12 +222,11 @@ function Display() {
                               setApiData([]);
                             }}
                           >
-                            D{/* <DeleteIcon /> */}
-                            {/* <img
-                              style={{ width: "30px" }}
-                              src="../assets/bg.jpg"
+                            <img
+                              style={{ width: "10px" }}
+                              src={Delete}
                               alt=""
-                            /> */}
+                            />
                           </button>
                         </>
                       ) : edit.currentVal == e.Task ? (
@@ -216,7 +234,15 @@ function Display() {
                           <button
                             name="Y"
                             data-testid="editingChoice"
-                            style={{ background: "rgb(11, 255, 44)" }}
+                            style={{
+                              height: "40px",
+                              width: "40px",
+                              background: "#76c893",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              padding: 0,
+                            }}
                             onClick={() => {
                               setEdit({ currentVal: "", ifClicked: false });
                               EditData(e.id, editText);
@@ -225,29 +251,64 @@ function Display() {
                               setApiData([]);
                             }}
                           >
-                            Y
+                            <img src={Correct} style={{ width: "10px" }} />
                           </button>
                           <button
                             name="N"
-                            style={{ background: "#ee1313de" }}
+                            style={{
+                              height: "40px",
+                              width: "40px",
+                              background: "#ff0054",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              padding: 0,
+                            }}
                             onClick={() => {
                               setEdit({ currentVal: "", ifClicked: false });
                             }}
                           >
-                            N
+                            <img src={Cross} style={{ width: "10px" }} />
                           </button>
                         </>
                       ) : (
                         <>
                           <button
+                            style={{
+                              height: "40px",
+                              width: "40px",
+                              background: "rgba(0,0,0,0.2)",
+                              opacity: 0.5,
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              padding: 0,
+                            }}
                             data-testid="EditButton"
-                            onClick={() => {
-                              setEdit({ currentVal: e.Task, ifClicked: true });
+                            // onClick={() => {
+                            //   setEdit({ currentVal: e.Task, ifClicked: true });
+                            // }}
+                          >
+                            <img style={{ width: "10px" }} src={Edit} alt="" />
+                          </button>
+                          <button
+                            style={{
+                              height: "40px",
+                              width: "40px",
+                              background: "rgba(0,0,0,0.2)",
+                              opacity: 0.5,
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              padding: 0,
                             }}
                           >
-                            E
+                            <img
+                              style={{ width: "10px" }}
+                              src={Delete}
+                              alt=""
+                            />
                           </button>
-                          <button>D</button>
                         </>
                       )}
                     </div>

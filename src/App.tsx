@@ -1,6 +1,8 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import Main from './components/Main'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import Dustbin from "../public/Vector-1.svg";
+
+import Main from "./components/Main";
 // import './App.css'
 
 function App() {
@@ -8,18 +10,18 @@ function App() {
 
   return (
     <div style={baseSTyle}>
-     <Main />
+      <Main />
     </div>
-  )
+  );
 }
 
-const baseSTyle={
-  height:'100vh',
-  width:'100vw',
-  display: 'flex',
-  alignItems:'center',
-  justifyContent: 'center',
-  backgroundColor:'white',
-}
+const baseSTyle = {
+  height: "100vh",
+  width: "100vw",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  backgroundColor: "white",
+};
 
-export default App
+export default App;
